@@ -16,16 +16,16 @@ type Meme struct {
 type Memes []Meme
 
 func allMemes(w http.ResponseWriter, r *http.Request){
-    data, err := ioutil.ReadFile("./memes.json")
-    if err != nil {
-        fmt.Print(err)
-    }
+	data, err := ioutil.ReadFile("./memes.json")
+	if err != nil {
+		fmt.Print(err)
+	}
 
-    var memes Memes
-    err = json.Unmarshal(data, &memes)
-    if err != nil {
-        fmt.Print(err)
-    }
+	var memes Memes
+	err = json.Unmarshal(data, &memes)
+	if err != nil {
+		fmt.Print(err)
+	}
 
 	fmt.Println("all memes here")
 	json.NewEncoder(w).Encode(memes)
@@ -43,5 +43,5 @@ func setUpRoutes(){
 
 func main(){
 	fmt.Println("BRUH")
-    setUpRoutes()
+	setUpRoutes()
 }
