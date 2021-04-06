@@ -18,7 +18,7 @@ type Memes []Meme
 func allMemes(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i <= 1; i++ {
 		incrementar()
-		fmt.Println("request number :  ", contador-1)
+		fmt.Println("request number :  ", contador /2) // this is for see how many request do
 	}
 	data, err := ioutil.ReadFile("./memes.json")
 	if err != nil {
